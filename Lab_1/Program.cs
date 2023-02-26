@@ -1,6 +1,8 @@
-﻿public class Point
+﻿using System;
+
+public class Point
 {
-    private int x; private int y;
+    private int x, y;
     private int red, green, blue;
 
     public int CoordX
@@ -13,7 +15,7 @@
         get { return y; }
         set { y = value; }
     }
-    public int ColirR
+    public int ColorR
     {
         get { return red; }
         set
@@ -29,7 +31,7 @@
             }
         }
     }
-    public int ColirB
+    public int ColorB
     {
         get { return blue; }
         set
@@ -45,7 +47,7 @@
             }
         }
     }
-    public int ColirG
+    public int ColorG
     {
         get { return green; }
         set
@@ -62,20 +64,28 @@
         }
     }
 
+    public Point()
+    {
+        x = 0;
+        y = 0;
+        red = 0;
+        blue = 0;
+        green = 0;
+    }
     public Point(int X, int Y, int Red, int Green, int Blue)
     {
         CoordX = X;
         CoordY = Y;
-        ColirR = Red;
-        ColirG = Green;
-        ColirB = Blue;
+        ColorR = Red;
+        ColorG = Green;
+        ColorB = Blue;
 
     }
 
     public void Show()
     {
-        System.Console.WriteLine("Coordinates:\n" + CoordX + "," + CoordY + "\n");
-        System.Console.WriteLine("Colors:\n" + "[" + ColirR + "," + ColirG + "," + ColirB + "]\n");
+        System.Console.WriteLine("Coordinates:\n" + CoordX + "," + CoordY);
+        System.Console.WriteLine("Colors:\n" + "[" + ColorR + "," + ColorG + "," + ColorB + "]\n");
     }
 
 }
@@ -84,12 +94,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Point obj1 = new Point(5, 5, 0, 255, 0);
+        Point obj1 = new Point(39, 50, 0, 255, 0);
         obj1.Show();
 
-        System.Console.WriteLine("Color change:");
-
-        obj1.ColirR = 100;
+        System.Console.WriteLine("Change:\n");
+        obj1.ColorR = 38;
         obj1.Show();
+
+
     }
 }
