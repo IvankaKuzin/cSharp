@@ -26,8 +26,7 @@ public class Point
             }
             else
             {
-                red = 0;
-                System.Console.WriteLine("Value color is  '< 0' or '> 255'");
+                throw new Exception("Error");
             }
         }
     }
@@ -42,8 +41,7 @@ public class Point
             }
             else
             {
-                blue = 0;
-                System.Console.WriteLine("Value color is  '< 0' or '> 255'");
+                throw new Exception("Error");
             }
         }
     }
@@ -58,8 +56,7 @@ public class Point
             }
             else
             {
-                green = 0;
-                System.Console.WriteLine("Value color is  '< 0' or '> 255'");
+                throw new Exception("Error");
             }
         }
     }
@@ -94,12 +91,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Point obj1 = new Point(39, 50, 0, 255, 0);
-        obj1.Show();
-
-        System.Console.WriteLine("Change:");
-        obj1.ColorR = 38;
-        obj1.Show();
+        try
+        {
+            Point obj1 = new Point(39, 50, 0, 256, 0);
+            obj1.Show();
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Error value color");
+        }
 
 
     }
